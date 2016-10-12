@@ -70,5 +70,5 @@ target/
 .ipynb_checkpoints/
 
 # data is small enough to include in repo
-# /data/
+/data/processed/
 
