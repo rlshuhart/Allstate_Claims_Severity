@@ -4,7 +4,7 @@
 # # Import Data
 
 # In[25]:
-import python as pd
+import pandas as pd
 #train = pd.read_csv("../data/raw/train.csv.zip", compression="zip", usecols=['loss'])
 train_binary = pd.read_pickle("../data/processed/train_binary_encoded.p")
 
