@@ -3,8 +3,10 @@
 
 # # Import Data
 
-# In[25]:
+# In[2]:
+
 import pandas as pd
+from sklearn.model_selection import train_test_split
 #train = pd.read_csv("../data/raw/train.csv.zip", compression="zip", usecols=['loss'])
 train_binary = pd.read_pickle("../data/processed/train_binary_encoded.p")
 
@@ -17,15 +19,13 @@ X_train, X_test, y_train, y_test = train_test_split(X, y,train_size=0.6, test_si
 
 # # Tree-based Pipeline Optimization Tool  (TPOT)
 # Randal S. Olson, Ryan J. Urbanowicz, Peter C. Andrews, Nicole A. Lavender, La Creis Kidd, and Jason H. Moore (2016). Automating biomedical data science through tree-based pipeline optimization. Applications of Evolutionary Computation, pages 123-137.
-#
+# 
 # http://rhiever.github.io/tpot/
 
-# In[13]:
+# In[3]:
 
 def go_tpot():
-    import pandas as pd
     from tpot import TPOTRegressor
-    from sklearn.model_selection import train_test_split
 
     tpot = TPOTRegressor(generations=5, population_size=20, verbosity=3, scoring='mean_absolute_error')
     tpot.fit(X_train, y_train)
@@ -35,7 +35,7 @@ def go_tpot():
 
 # # Standalone - SGD Regressor
 
-# In[12]:
+# In[4]:
 
 def go_sgd():
     from sklearn.pipeline import Pipeline
@@ -63,4 +63,7 @@ def go_sgd():
     print("Best Estimator: ", gs.best_estimator_)
 
 
-# In[ ]:
+# In[5]:
+
+go_tpot()
+
