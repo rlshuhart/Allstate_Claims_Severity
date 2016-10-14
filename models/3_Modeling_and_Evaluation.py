@@ -4,7 +4,7 @@
 # # Import Data
 
 # In[25]:
-
+import python as pd
 #train = pd.read_csv("../data/raw/train.csv.zip", compression="zip", usecols=['loss'])
 train_binary = pd.read_pickle("../data/processed/train_binary_encoded.p")
 
@@ -17,7 +17,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y,train_size=0.6, test_si
 
 # # Tree-based Pipeline Optimization Tool  (TPOT)
 # Randal S. Olson, Ryan J. Urbanowicz, Peter C. Andrews, Nicole A. Lavender, La Creis Kidd, and Jason H. Moore (2016). Automating biomedical data science through tree-based pipeline optimization. Applications of Evolutionary Computation, pages 123-137.
-# 
+#
 # http://rhiever.github.io/tpot/
 
 # In[13]:
@@ -64,6 +64,3 @@ def go_sgd():
 
 
 # In[ ]:
-
-
-
