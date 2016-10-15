@@ -26,7 +26,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y,train_size=0.6, test_si
 
 def go_tpot():
     from tpot import TPOTRegressor
-
+    import datetime
     tpot = TPOTRegressor(generations=5, population_size=20, verbosity=3, scoring='mean_absolute_error')
     tpot.fit(X_train, y_train)
     print(tpot.score(X_test, y_test))
